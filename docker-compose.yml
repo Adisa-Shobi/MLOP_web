@@ -7,8 +7,8 @@ services:
     develop:
       watch:
         - action: sync
-          path: ./src
-          target: /app/src
+          path: ./
+          target: /app/
           ignore:
             - .git
     restart: always
