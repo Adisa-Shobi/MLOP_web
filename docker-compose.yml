@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+      # dockerfile: Dockerfile
+      target: dev
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+          ignore:
+            - .git
+    restart: always
+    ports:
+      - "8080:8080"
