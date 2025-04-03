@@ -2,63 +2,39 @@
 
 A React TypeScript application for predicting, visualizing, and training data models.
 
-## Getting Started
+## Quick Start with Docker Compose
 
 ### Prerequisites
 
-- Node.js 20 or higher
-- npm or yarn
+- Docker
+- Docker Compose
 
-### Installation
+### Getting Started
 
-1. Clone the repository
-2. Install dependencies:
+1. Clone the repository:
 ```bash
-npm install
+git clone <repository-url>
+cd predict-visualize-train
 ```
 
-### Development
-
-To start the development server:
-
+2. Start the development environment:
 ```bash
-npm run dev
+docker compose up
 ```
 
 The application will be available at http://localhost:8080
 
-### Building for Production
+### Development Workflow
 
-To create a production build:
+- The application will automatically reload when you make changes to the source code
+- All dependencies are managed within the Docker container
+- No need to install Node.js or npm locally
 
+### Stopping the Application
+
+To stop the application:
 ```bash
-npm run build
-```
-
-To preview the production build:
-
-```bash
-npm run preview
-```
-
-## Docker Support
-
-### Development
-
-To run the application in development mode using Docker:
-
-```bash
-docker build -t predict-visualize-train:dev --target dev .
-docker run -p 8080:8080 -v $(pwd):/app -v /app/node_modules predict-visualize-train:dev
-```
-
-### Production
-
-To build and run the production version:
-
-```bash
-docker build -t predict-visualize-train .
-docker run -p 80:80 predict-visualize-train
+docker compose down
 ```
 
 ## Features
@@ -80,3 +56,27 @@ docker run -p 80:80 predict-visualize-train
 - React Query
 - Recharts
 - Axios
+
+## Manual Development Setup (Optional)
+
+If you prefer to develop without Docker, you'll need:
+
+- Node.js 20 or higher
+- npm or yarn
+
+Then follow these steps:
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+npm run dev
+```
+
+3. Build for production:
+```bash
+npm run build
+```
